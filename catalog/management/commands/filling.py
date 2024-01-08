@@ -20,12 +20,9 @@ class Command(BaseCommand):
                     elif item["model"] == "catalog.product":
                         products = {"name": item["fields"]["name"],
                                       "description": item["fields"]["description"],
-                                    "category": item["fields"]["category"],
                                       "price_for_one": item["fields"]["price_for_one"]}
                         create_product.append(Product(**products))
 
-            # Category.objects.bulk_create(create_catalog)
-            # Product.objects.bulk_create(create_product)
+            Category.objects.bulk_create(create_catalog)
+            Product.objects.bulk_create(create_product)
 
-            print(create_catalog)
-            print(create_product)
