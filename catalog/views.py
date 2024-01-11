@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def some_title(request):
+    return render(request, 'catalog/some_title.html')
