@@ -1,5 +1,8 @@
 from django.urls import path
-from catalog.views import some_title
+from catalog.views import category, products, product
 
 urlpatterns = [
-    path('', some_title)]
+    path('category/', category),
+    path('', products),
+    path('products/<pk>/', product)
+]
